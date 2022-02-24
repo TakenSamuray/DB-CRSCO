@@ -1,0 +1,216 @@
+    <header>
+      <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <title>DataBase CRSO</title>
+    </head>
+      <figure>
+        <p> <img src="https://www.linkpicture.com/q/Saude_principal_vert.png"
+             alt=logo>
+      </figure>
+        <br>
+        <h1 id="title">COMPUTADORES SMSCRSCO</h1>
+      <p id="description">
+        Adcione ou consulte um computador do predio
+      </p>
+
+      <link rel="stylesheet" href="css/Style.css">
+
+    </header>
+    <div class="form-container">
+      <form id="survey-form">
+        <div id="input-group">
+          <label id="name-label">Computador</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder=" Nome do Computador  "
+            required
+          />
+        </div>
+        <div id="input-group">
+          <label id="number-label">Número de Série (opcional)</label>
+          <input
+            type="text"
+            id="serial_n"
+            name="serial_n"
+            placeholder=" Nº série"
+          />
+        </div>
+        <div id="input-group">
+          <label id="email-label">Modelo do computador (opcional)</label>
+          <input
+            type="text"
+            id="modelo"
+            name="modelo"
+            placeholder=" Modelo"
+          />
+        </div>
+        <div id="input-group">
+          <label id="dropdown-label"
+            >Versão do Windows</label
+          >
+          <select id="dropdown" type="text" name="winver">
+            <option disabled selected value>Escolha a versão do Windows</option>
+            <option value="XP">Windows XP</option>
+            <option value="Win_7">Windows 7</option>
+            <option value="win_8">Windows 8/8.1</option>
+            <option value="Win_10">Windows 10</option>
+            <option value="Win_11">Windows 11</option>
+            <option value="outro">Desconhecida</option>
+          </select>
+        </div>
+        <div id="input-group">
+          <label id="uso_pc"
+            >O computador estava em uso?</label
+          >
+          <label class="radio-label"
+            ><input
+              type="radio"
+              id="radio-btn"
+              value="Sim"
+              name="recommend"
+              checked
+            />
+            Sim</label
+          >
+          <label class="radio-label"
+            ><input type="radio" id="radio-btn" value="maybe" name="recommend" />
+            Não</label
+          >
+        </div>
+        <br />
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script language="javascript" type="text/javascript">
+        function dynamicdropdown(listindex)
+        {
+            switch (listindex)
+            {
+            case "terreo" :
+                document.getElementById("status").options[0]=new Option("Escolha o setor","");
+                document.getElementById("status").options[1]=new Option("Desenvolvimento","desenv");
+                document.getElementById("status").options[2]=new Option("Escola","escola");
+            document.getElementById("status").options[3]=new Option("Sala 1","sala1");
+                break;
+            case "1andar" :
+                document.getElementById("status").options[0]=new Option("Escolha o setor","");
+                document.getElementById("status").options[1]=new Option("Administração","adm");
+                document.getElementById("status").options[2]=new Option("Equipe Técnica","eqtec");
+                document.getElementById("status").options[3]=new Option("Gabinete","gabinete");
+                break;
+            case "2andar" :
+                document.getElementById("status").options[0]=new Option("Escolha o setor","");
+                document.getElementById("status").options[1]=new Option("CEINFO CRS-Oeste","ceinfo");
+                document.getElementById("status").options[2]=new Option("Contratos","contratos");
+                document.getElementById("status").options[3]=new Option("Informática","info");
+                document.getElementById("status").options[4]=new Option("Jurídico","juridico");
+                break;
+            case "3andar" :
+                document.getElementById("status").options[0]=new Option("Escolha o setor","");
+                document.getElementById("status").options[1]=new Option("Div. Pessoas","divpessoas");
+                document.getElementById("status").options[2]=new Option("Regulação","regulacao");
+                document.getElementById("status").options[3]=new Option("RH","rh");
+                break;
+            case "4andar" :
+                document.getElementById("status").options[0]=new Option("Escolha o setor","");
+                document.getElementById("status").options[1]=new Option("Contabilidade","contabil");
+                document.getElementById("status").options[2]=new Option("DAF","daf");
+                document.getElementById("status").options[3]=new Option("Patrimônio","patrimonio");
+                document.getElementById("status").options[4]=new Option("SAMU","samu");
+                break;
+            case "5andar" :
+                document.getElementById("status").options[0]=new Option("Escolha o setor","");
+                document.getElementById("status").options[1]=new Option("Sala Reunião","reuniao");
+                document.getElementById("status").options[2]=new Option("Spervisão Técnica LA/PI","supteclapi");
+                break;
+            case "6andar" :
+                document.getElementById("dropdown").options[0]=new Option("Escolha o setor","");
+                document.getElementById("status").options[1]=new Option("DRUVIS","drvs");
+                document.getElementById("status").options[2]=new Option("Ouvidoria","ouvidoria");
+                document.getElementById("status").options[3]=new Option("Supervisão SUVIS LA/PI","supsuvislapi");
+                document.getElementById("status").options[4]=new Option("Vig. Epidemio","vigepidemio");
+                break;
+
+            }
+            return true;
+        }
+        </script>
+        </head>
+       <div id="input-group">
+          <label id="dropdown-label"
+            >Este computador pertence a qual andar?</label
+        >
+          <select id="dropdown" name="source" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+            <option disabled selected value>Escolha o andar</option>
+            <option value="terreo">Térreo</option>
+            <option value="1andar">1º Andar</option>
+            <option value="2andar">2º Andar</option>
+            <option value="3andar">3º Andar</option>
+            <option value="4andar">4º Andar</option>
+            <option value="5andar">5º Andar</option>
+            <option value="6andar">6º Andar</option>
+          </select>
+        </div>
+        <br />
+        <div class="sub_category_div" id="dropdown-label"><label id="dropdown-label"
+            >Este computador pertence a qual setor?</label>
+
+        <script type="text/javascript" language="JavaScript">
+            document.write('<select name="status" id="status"><option value="">Escolha o setor</option></select>')
+            </script>
+            <noscript>
+            <select id="dropdown" name="status">
+                <option value="desenv">Desenvolvimento</option>
+                <option value="escola">Escola</option>
+                <option value="sala1">Sala 1</option>
+                <option value="adm">Administração</option>
+                <option value="eqtec">Equipe Técnica</option>
+                <option value="gabinete">Gabinete</option>
+                <option value="ceinfo">CEINFO CRS-Oeste</option>
+                <option value="contratos">Contratos</option>
+                <option value="info">Informática</option>
+                <option value="juridico">Jurídico</option>
+                <option value="divpessoas">Div. Pessoas</option>
+                <option value="regulacao">Regulação</option>
+                <option value="rh">RH</option>
+                <option value="contabil">Contabilidade</option>
+                <option value="daf">DAF</option>
+                <option value="patrimonio">Patrimônio</option>
+                <option value="samu">SAMU</option>
+                <option value="reuniao">Sala Reunião</option>
+                <option value="supteclapi">Supervisão Técnica LA/PI</option>
+                <option value="drvs">DRUVIS</option>
+                <option value="ouvidoria">Ouvidoria</option>
+                <option value="supsuvislapi">Supervisão SUVIS LA/PI</option>
+                <option value="vigepidemio">Vig. Epidemio</option>
+
+            </select>
+            </noscript>
+        </div>
+        </body>
+    </html>
+        <br />
+
+        <div id="input-group">
+          <label id="comment-label">Comentarios (opcional)</label>
+          <textarea
+            id="comments"
+            value="front-end-projects"
+            type="checkbox"
+            class="form-textarea"
+            placeholder=" Entre com seus comentarios aqui..."
+          ></textarea>
+        </div>
+        <br />
+        <button type="submit" id="submit" class="submit-button" >Enviar </button>
+      </form>
+    </div>
+    <footer>
+      <p>
+        Code by
+        <a target="_blank" href="https://google.com">Ninja</a>
+      </p>
+    </footer>
